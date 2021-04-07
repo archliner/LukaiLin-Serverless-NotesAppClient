@@ -14,9 +14,9 @@ phases:
       - aws s3 cp --recursive --acl public-read ./build s3://lukai-notes-app-pipeline/ 
       # invalidate the CloudFront cache for index.html and service-worker.js
       # to force CloudFront to update its edge locations with the new versions
-      # - >
-      #   aws cloudfront create-invalidation --distribution-id $CF_DISTR_ID
-      #   --paths /index.htm
+      - >
+        aws cloudfront create-invalidation --distribution-id E304X6XTVWC6YS
+        --paths /index.htm
 artifacts:
   files:
     - '**/*'
